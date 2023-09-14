@@ -1,0 +1,85 @@
+﻿@model MultiPlug.Base.Http.EdgeApp
+
+<section class="row-fluid">
+
+    <div class="row-fluid">
+        <div class="box">
+            <div class="span3">
+                <a style="line-height: 52px;" href="#"><img alt="Transform Logo" src="@Raw(Model.Context.Paths.Assets)images/transform.png"></a>
+            </div>
+            <div class="span6">
+                <p style="font-size:26px; line-height: 54px; text-align: center; margin: 0px;">XSLTs</p>
+            </div>
+            <div class="span3" style="text-align: right;">
+                <a class="btn btn-green" style="height:44px; width:35px" href="@Raw(Model.Context.Paths.Home)xslt/"><i class="icon-plus icon-large"></i><p>Add</p></a>
+            </div>
+        </div>
+    </div>
+
+    @Include("MultiPlug.Ext.Transform.TransformationsNavigation")
+
+    <div class="row-fluid">
+        <div class="box non-collapsible">
+            <ul style="list-style: none;">
+                <li>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="span5">
+                                <h4>Event ID</h4>
+                            </div>
+                            <div class="span5">
+                                <h4>Description</h4>
+                            </div>
+                            <div class="span2">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul style="list-style: none;">
+                @foreach (var XSLT in @Model.Extension.Model)
+                {
+                    <li>
+                        <div class="control-group">
+                            <div class="controls">
+                                <div class="span5">
+                                    <a href="@Raw(Model.Context.Paths.Home)xslt/?id=@XSLT.Guid">@XSLT.Event.Id</a>
+                                </div>
+                                <div class="span5">
+                                    <a href="@Raw(Model.Context.Paths.Home)xslt/?id=@XSLT.Guid">@XSLT.Event.Description</a>
+                                </div>
+                                <div class="span2">
+                                    <div class="btn-group">
+                                        <a class="btn btn-blue" href="@Raw(Model.Context.Paths.Home)xslt/?id=@XSLT.Guid"><i class="icon-edit"></i></a>
+                                        <button class="item btn btn-red delete-xslt" value="@XSLT.Guid" type="button"><i class="icon-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    function ApplyDelete(theSelector) {
+        $(theSelector).on('click', '.delete-xslt', function () {
+            var id = $(this).attr('value');
+            var closestli = $(this).closest("li");
+
+            $.ajax({
+                type: "POST",
+                url: '@Raw(Model.Context.Paths.Current)delete/?id=' + id,
+                success: function () {
+                    closestli.remove();
+                }
+            });
+        });
+    }
+
+    ApplyDelete(document);
+</script>
+

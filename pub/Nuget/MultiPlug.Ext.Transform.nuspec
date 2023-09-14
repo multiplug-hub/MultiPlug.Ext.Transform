@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MultiPlug.Ext.Transform</id>
+    <version>1.0.9</version>
+    <title>Tranformations Extension for the MultiPlug .Net Edge Computing Platform</title>
+    <authors>MultiPlugHub</authors>
+    <owners>MultiPlugHub</owners>
+    <projectUrl>https://github.com/multiplug-hub/MultiPlug.Ext.Transform</projectUrl>
+    <icon>images\multiplugico.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tranformations Extension for MultiPlug</description>
+    <repository type="git" url="https://github.com/multiplug-hub/MultiPlug.Ext.Transform" />
+    <license type="expression">MIT</license>
+    <releaseNotes>1.0.9 Source Code made Public - Enhancement: Basic String Tranformations
+1.0.8 Upgrade for MultiPlug.Core 2.2.68
+1.0.6 Enhancement: Applied latest base classes.
+1.0.3 Enhancement: Use regular expressions to transform strings.
+</releaseNotes>
+    <copyright>MultiPlug Community</copyright>
+    <tags>MultiPlug Edge_Computing Regular_Expressions RegExr XSLT</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="MultiPlug.Base" version="1.0.71" />
+        <dependency id="MultiPlug.Extension.Core" version="1.0.64" />
+        <dependency id="MultiPlug.Core" version="2.2.81" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="images\multiplugico.png" target="images\" />
+    <file src="..\..\src\MultiPlug.Ext.Transform\bin\Release\MultiPlug.Ext.Transform.dll" target="lib\net472" />
+  </files>
+</package>

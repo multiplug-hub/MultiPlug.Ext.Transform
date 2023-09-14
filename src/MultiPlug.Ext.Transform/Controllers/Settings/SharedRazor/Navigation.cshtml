@@ -1,0 +1,36 @@
+﻿@model MultiPlug.Base.Http.EdgeApp
+@functions {
+    public string NavLocationIsHome()
+    {
+        return Model.Context.Paths.Current == Model.Context.Paths.Home ? "active" : string.Empty;
+    }
+
+    public string NavLocationIsString()
+    {
+        return Model.Context.Paths.Current.StartsWith(Model.Context.Paths.Home + "string") ? "active" : string.Empty;
+    }
+
+    public string NavLocationIsRegex()
+    {
+        return Model.Context.Paths.Current.StartsWith(Model.Context.Paths.Home + "regex") ? "active" : string.Empty;
+    }
+
+    public string NavLocationIsXslt()
+    {
+        return Model.Context.Paths.Current.StartsWith(Model.Context.Paths.Home + "xslt") ? "active" : string.Empty;
+    }
+
+    public string NavLocationIsAbout()
+    {
+        return Model.Context.Paths.Current == Model.Context.Paths.Home + "about/" ? "active" : string.Empty;
+    }
+}
+<div class="row-fluid">
+    <ul class="nav nav-tabs">
+        <li class="@NavLocationIsHome()"><a href="@Raw(Model.Context.Paths.Home)">Home</a></li>
+            <li class="@NavLocationIsString()"><a href="@Raw(Model.Context.Paths.Home)strings/">Strings</a></li>
+            <li class="@NavLocationIsRegex()"><a href="@Raw(Model.Context.Paths.Home)regexs/">Regular Expressions</a></li>
+            <li class="@NavLocationIsXslt()"><a href="@Raw(Model.Context.Paths.Home)xslts/">XSLTs</a></li>
+            <li class="@NavLocationIsAbout()"><a href="@Raw(Model.Context.Paths.Home)about/">About</a></li>
+    </ul>
+</div>

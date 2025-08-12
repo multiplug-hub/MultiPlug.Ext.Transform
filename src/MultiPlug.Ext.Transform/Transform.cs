@@ -6,6 +6,7 @@ using MultiPlug.Extension.Core.Http;
 
 using MultiPlug.Ext.Transform.Models.Load;
 using MultiPlug.Ext.Transform.Properties;
+using MultiPlug.Ext.Transform.Controllers;
 
 namespace MultiPlug.Ext.Transform
 {
@@ -49,6 +50,7 @@ namespace MultiPlug.Ext.Transform
                     new RazorTemplate("TransformationsRegularExpressionsView", Resources.RegularExpressions),
                     new RazorTemplate("TransformationsXsltView", Resources.XSLT),
                     new RazorTemplate("TransformationsXSLTsView", Resources.XSLTs),
+                    new RazorTemplate(Templates.AppHome, Resources.RegExTester),
                     new RazorTemplate("TransformationsAbout", Resources.About)
                 };
             }

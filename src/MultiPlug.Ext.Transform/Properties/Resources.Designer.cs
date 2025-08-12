@@ -87,7 +87,7 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///  &lt;xsl:template match=&quot;/&quot;&gt;
         ///    &lt;!-- 3 Ways to Select a Subject Value
         ///      1. By it&apos;s Name
-        ///      Subject Value: &lt;xsl:value-of select=&quot;root/subjects/update&quot;/&gt;
+        ///      Subject Value: &lt;xsl:value-of select=&quot;root/subjects/NameOfSubject&quot;/&gt;
         ///      
         ///      2. By it&apos;s Index Value
         ///      Subject Value: &lt;xsl:value-of select=&quot;root/index/item0&quot;/&gt;
@@ -95,7 +95,7 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///      3. Using the Array
         ///      &lt;xsl:for-each select=&quot;root/array&quot;&gt;
         ///        Subject Value:  &lt;xsl:value-of select=&quot;.&quot; /&gt;
-        ///      &lt;/xsl:for-e [rest of string was truncated]&quot;;.
+        ///      &lt;/xs [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DefaultXSLT {
             get {
@@ -110,17 +110,13 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///
         ///    &lt;div class=&quot;row-fluid&quot;&gt;
         ///        &lt;div class=&quot;box&quot;&gt;
-        ///            &lt;div class=&quot;span5&quot;&gt;
-        ///                &lt;a href=&quot;/&quot;&gt;&lt;img alt=&quot;Ports Icon&quot; src=&quot;@Raw(Model.Context.Paths.Assets)images/transform.png&quot;&gt;&lt;/a&gt;
+        ///            &lt;div class=&quot;span3&quot;&gt;
+        ///                &lt;a style=&quot;line-height: 52px;&quot; href=&quot;#&quot;&gt;&lt;img alt=&quot;Transform Logo&quot; src=&quot;@Raw(Model.Context.Paths.Assets)images/transform.png&quot;&gt;&lt;/a&gt;
         ///            &lt;/div&gt;
-        ///            &lt;div class=&quot;span2&quot;&gt;
-        ///                &lt;p style=&quot;font-size:22.75px; padding-top:10px;&quot;&gt;Transformations&lt;/p&gt;
+        ///            &lt;div class=&quot;span6&quot;&gt;
+        ///                &lt;p style=&quot;font-size:26px; line-height: 54px; text-align: center; margin: 0px;&quot;&gt;Transformations&lt;/p&gt;
         ///            &lt;/div&gt;
-        ///        &lt;/div&gt;
-        ///    &lt;/div&gt;
-        ///
-        ///    &lt;div class=&quot;row-fluid&quot;&gt;
-        ///        &lt;div class=&quot;bo [rest of string was truncated]&quot;;.
+        ///            &lt;div cl [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Home {
             get {
@@ -136,14 +132,14 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///        return Model.Context.Paths.Current == Model.Context.Paths.Home ? &quot;active&quot; : string.Empty;
         ///    }
         ///
-        ///    public string NavLocationIsLane()
+        ///    public string NavLocationIsString()
         ///    {
-        ///        return Model.Context.Paths.Current == Model.Context.Paths.Home + &quot;lane/&quot; ? &quot;active&quot; : string.Empty;
+        ///        return Model.Context.Paths.Current.StartsWith(Model.Context.Paths.Home + &quot;string&quot;) ? &quot;active&quot; : string.Empty;
         ///    }
         ///
-        ///    public string NavLocationIsSetup()
+        ///    public string NavLocationIsRegex()
         ///    {
-        ///        return Model.Context.Paths.Current.StartsWith(Model.Context.Paths.Home + &quot;lane/setup/&quot;) ? [rest of string was truncated]&quot;;.
+        ///        return Model.Context.Paths.Current.StartsWith(Model.Context.Paths.Home + &quot;reg [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Navigation {
             get {
@@ -152,13 +148,34 @@ namespace MultiPlug.Ext.Transform.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        ///
+        ///namespace MultiPlug.Ext.Transform.Controllers.Apps.RegExTester
+        ///{
+        ///    class RegExTester
+        ///    {
+        ///    }
+        ///}
+        ///.
+        /// </summary>
+        internal static string RegExTester {
+            get {
+                return ResourceManager.GetString("RegExTester", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///
         ///@functions
         ///{
-        ///    string isEnabled(bool theValue)
+        ///    string isEnabled(bool? theValue)
         ///    {
-        ///        return (theValue) ? &quot;checked&quot; : &quot;&quot;;
+        ///        return (theValue.Value) ? &quot;checked&quot; : &quot;&quot;;
         ///    }
         ///
         ///    string isConnected(bool theValue)
@@ -170,8 +187,7 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///&lt;form action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot; autocomplete=&quot;off&quot;&gt;
         ///    &lt;section class=&quot;row-fluid&quot;&gt;
         ///
-        ///        &lt;div class=&quot;row-fluid&quot;&gt;
-        ///    [rest of string was truncated]&quot;;.
+        ///        &lt;div class=&quot;row-fluid [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RegularExpression {
             get {
@@ -209,15 +225,17 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///    {
         ///        return (theValue) ? &quot;&lt;i class=\&quot;icon-ok icon-large\&quot;&gt;&lt;/i&gt;&quot; : &quot;&lt;i class=\&quot;icon-remove icon-large\&quot;&gt;&lt;/i&gt;&quot;;
         ///    }
+        ///
+        ///    string isEnabled(bool? theValue)
+        ///    {
+        ///        return (theValue.Value) ? &quot;checked&quot; : &quot;&quot;;
+        ///    }
         ///}
         ///
         ///&lt;form name=&quot;StringForm&quot; action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot; autocomplete=&quot;off&quot;&gt;
         ///    &lt;section class=&quot;row-fluid&quot;&gt;
         ///
-        ///        &lt;div class=&quot;row-fluid&quot;&gt;
-        ///            &lt;div class=&quot;box&quot;&gt;
-        ///                &lt;div class=&quot;span3&quot;&gt;
-        ///                [rest of string was truncated]&quot;;.
+        ///        &lt;di [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string String {
             get {

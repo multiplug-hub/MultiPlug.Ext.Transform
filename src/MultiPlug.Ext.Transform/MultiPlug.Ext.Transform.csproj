@@ -55,6 +55,8 @@
     <Compile Include="Components\String\StringComponent.cs" />
     <Compile Include="Components\String\StringFunctions.cs" />
     <Compile Include="Components\XSLT\XSLTComponent.cs" />
+    <Compile Include="Controllers\Apps\RegExTester\HomeController.cs" />
+    <Compile Include="Controllers\Apps\RegExTester\RegExTesterApp.cs" />
     <Compile Include="Controllers\Assets\AssetsEndpoint.cs" />
     <Compile Include="Controllers\Assets\ImageController.cs" />
     <Compile Include="Controllers\Settings\About\AboutController.cs" />
@@ -72,7 +74,9 @@
     <Compile Include="Controllers\Settings\XSLTs\XSLTController.cs" />
     <Compile Include="Controllers\Settings\XSLTs\XSLTDeleteController.cs" />
     <Compile Include="Controllers\Settings\XSLTs\XSLTsController.cs" />
+    <Compile Include="Controllers\Templates.cs" />
     <Compile Include="Core.cs" />
+    <Compile Include="Models\Apps\RegExTester\Model.cs" />
     <Compile Include="Models\Components\String\Actions.cs" />
     <Compile Include="Models\Components\String\Step.cs" />
     <Compile Include="Models\Components\String\StringProperties.cs" />
@@ -95,6 +99,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Controllers\Apps\RegExTester\RegExTester.cshtml" />
     <None Include="Controllers\Settings\About\About.cshtml" />
     <None Include="Controllers\Settings\Home\Home.cshtml" />
     <None Include="Controllers\Settings\RegularExpressions\RegularExpression.cshtml" />

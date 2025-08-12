@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.Transform</id>
-    <version>1.0.9</version>
+    <version>1.0.10</version>
     <title>Tranformations Extension for the MultiPlug .Net Edge Computing Platform</title>
     <authors>MultiPlugHub</authors>
     <owners>MultiPlugHub</owners>
@@ -12,7 +12,11 @@
     <description>Tranformations Extension for MultiPlug</description>
     <repository type="git" url="https://github.com/multiplug-hub/MultiPlug.Ext.Transform" />
     <license type="expression">MIT</license>
-    <releaseNotes>1.0.9 Source Code made Public - Enhancement: Basic String Tranformations
+    <releaseNotes>1.0.10
+Enhancement https://github.com/multiplug-hub/MultiPlug.Ext.Transform/issues/3
+Enhancement https://github.com/multiplug-hub/MultiPlug.Ext.Transform/issues/2
+Enhancement https://github.com/multiplug-hub/MultiPlug.Ext.Transform/issues/1
+1.0.9 Source Code made Public - Enhancement: Basic String Tranformations
 1.0.8 Upgrade for MultiPlug.Core 2.2.68
 1.0.6 Enhancement: Applied latest base classes.
 1.0.3 Enhancement: Use regular expressions to transform strings.

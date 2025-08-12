@@ -25,8 +25,7 @@
                     <p style="font-size:26px; line-height: 54px; text-align: center; margin: 0px;">Regular Expression</p>
                 </div>
                 <div class="span3" style="text-align: right;">
-                    <a class="btn btn-black" style="height:44px; width:35px" href="@Raw(Model.Context.Paths.Home)regexs/"><i class="icon-arrow-left icon-large"></i><p>Back</p></a>
-                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn btn-green"><i class="icon-save icon-large"></i><p>Save</p></button>
+                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn"><i class="icon-save icon-large"></i><p>Save</p></button>
                 </div>
             </div>
         </div>
@@ -81,7 +80,7 @@
 
                     <div class="span4">
                         <div class="span12">
-                            <div class="row-fluid"><div class="span12">Description</div></div>
+                            <div class="row-fluid"><div class="span12">Event Description</div></div>
                             <div class="row-fluid"><div class="span12"><input name="TransformedEventDescription" class="input-block-level" type="text" placeholder="Description" value="@Model.Extension.Model.TransformedEvent.Description"></div></div>
                         </div>
                     </div>
@@ -109,7 +108,7 @@
                         <h3 class="box-header">
                             Subscriptions
                         </h3>
-                        <div class="box">
+                        <div class="box non-collapsible">
                             <div class="row-fluid">
                             </div>
                             <ul id="Subscriptions" style="list-style: none;">
@@ -154,7 +153,7 @@
                         <h3 class="box-header">
                             Matches Event Subjects
                         </h3>
-                        <div class="box">
+                        <div class="box non-collapsible">
                             <div class="row-fluid">
                                 <div class="span12">
                                     <label class="checkbox">
@@ -167,7 +166,7 @@
                                 <li>
                                     <div class="row-fluid">
                                         <div class="span2">
-                                            Index
+                                            Match
                                         </div>
                                         <div class="span8">Event Subject
                                         </div>
@@ -182,7 +181,7 @@
                                     <li id="@Model.Extension.Model.Guid--keyvalue--@ResultKey.Index--li">
                                         <div class="row-fluid">
                                             <div class="span2">
-                                                @ResultKey.Index
+                                                @Raw((ResultKey.Index + 1).ToString())
                                                 <input type="hidden" name="ResultKeyIndex" value="@ResultKey.Index">
                                             </div>
                                             <div class="span8">
@@ -219,8 +218,14 @@
         </div>
     </section>
 </form>
-
+<script type="text/javascript" src="@Raw(Model.Context.Paths.Assets)js/jquery.dirty.min.js"></script>
 <script>
+
+@if (String.IsNullOrEmpty(Model.Extension.Model.Pattern))
+{
+    <text>$("form").dirty("setAsDirty");</text>
+}
+
     function newSubElement() {
         return '<li>\
             <div class="control-group">\
@@ -243,7 +248,7 @@
         return '<li id="@Model.Extension.Model.Guid--keyvalue--' + index + '--li">\
                     <div class="row-fluid">\
                         <div class="span2">\
-                            ' + index + '\
+                            ' + (index + 1) + '\
                             <input type="hidden" name="ResultKeyIndex" value="' + index + '">\
                         </div> \
                         <div class="span8">\
@@ -261,14 +266,15 @@
         $(theSelector).on('click', '.delete-sub', function () {
             var id = $(this).attr('value');
             var closestli = $(this).closest("li");
-
-            $.ajax({
-                type: "POST",
-                url: '@Raw(Model.Context.Paths.Current)delete/?id=@Model.Extension.Model.Guid&subid=' + id,
-                success: function () {
-                    closestli.remove();
-                }
-            });
+            if (confirm("Delete the Subscription?")) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Raw(Model.Context.Paths.Current)delete/?id=@Model.Extension.Model.Guid&subid=' + id,
+                    success: function () {
+                        closestli.remove();
+                    }
+                });
+            }
         });
     }
 
@@ -277,11 +283,13 @@
         var NewAggregateSubscription = $('#Subscriptions li:last-child');
         applyMPEventPickerOnClick();
         ApplyDelete(NewAggregateSubscription.find(':button'));
+        $("form").dirty("setAsDirty");
     });
 
     $('#new-resultkey').on('click', function () {
         $('#ResultKeys').append(newResultKey(ResultKeysCount));
         ResultKeysCount++;
+        $("form").dirty("setAsDirty");
     });
 
     $('#remove-resultkey').on('click', function () {
@@ -289,6 +297,7 @@
         {
             ResultKeysCount--;
             $('#ResultKeys li:last-child').remove();
+            $("form").dirty("setAsDirty");
         }
     });
 

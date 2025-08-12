@@ -47,7 +47,7 @@ namespace MultiPlug.Ext.Transform.Views.Controllers.XSLTs
                     Event = new Event
                     {
                         Guid = guid,
-                        Id = guid,
+                        Id = "MultiPlug.Ext.Transform-" + guid.Substring(24, 12),
                         Description = "XSLT Result",
                         Subjects = new string[] { "XSLTResult" },
                         Group = "XSLT"

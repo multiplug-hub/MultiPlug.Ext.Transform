@@ -125,6 +125,15 @@ namespace MultiPlug.Ext.Transform.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to !function (t) { var i = [], e = &quot;dirty&quot;, n = &quot;clean&quot;, s = &quot;dirtyInitialValue&quot;, r = function (t) { var e; return i.forEach(function (i) { i.id === t &amp;&amp; (e = i) }), e }, a = function (i) { i.form.on(&quot;submit&quot;, function () { i.submitting = !0 }), i.options.preventLeaving &amp;&amp; t(window).on(&quot;beforeunload&quot;, function (t) { if (i.isDirty &amp;&amp; !i.submitting) return t.preventDefault(), i.options.leavingMessage }) }, o = function (t) { t.form.find(&quot;input, select, textarea&quot;).on(&quot;change.dirty click.dirty keyup.dirty keydown. [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string jquery_dirty_min_js {
+            get {
+                return ResourceManager.GetString("jquery_dirty_min_js", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
         ///@functions {
         ///    public string NavLocationIsHome()
@@ -148,19 +157,20 @@ namespace MultiPlug.Ext.Transform.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
-        ///using System.Linq;
-        ///using System.Text;
-        ///using System.Threading.Tasks;
-        ///
-        ///namespace MultiPlug.Ext.Transform.Controllers.Apps.RegExTester
+        ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
+        ///@functions
         ///{
-        ///    class RegExTester
+        ///    string isEnabled(bool? theValue)
         ///    {
+        ///        return (theValue.Value) ? &quot;checked&quot; : &quot;&quot;;
         ///    }
         ///}
-        ///.
+        ///&lt;form action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot; autocomplete=&quot;off&quot; spellcheck=&quot;false&quot;&gt;
+        ///    &lt;section class=&quot;row-fluid&quot;&gt;
+        ///        &lt;div class=&quot;row-fluid&quot;&gt;
+        ///            &lt;div class=&quot;box&quot;&gt;
+        ///                &lt;div class=&quot;span3&quot;&gt;
+        ///                    &lt;a style=&quot;line-height: 52px;&quot; href=&quot;#&quot;&gt;&lt;img alt=&quot;Transform Logo&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RegExTester {
             get {
@@ -184,10 +194,10 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///    }
         ///}
         ///
-        ///&lt;form action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot; autocomplete=&quot;off&quot;&gt;
+        ///&lt;form action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot; enctype=&quot;application/x-www-form-urlencoded&quot; autocomplete=&quot;off&quot; spellcheck=&quot;false&quot;&gt;
         ///    &lt;section class=&quot;row-fluid&quot;&gt;
         ///
-        ///        &lt;div class=&quot;row-fluid [rest of string was truncated]&quot;;.
+        ///        &lt;d [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RegularExpression {
             get {
@@ -245,9 +255,7 @@ namespace MultiPlug.Ext.Transform.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to @model MultiPlug.Base.Http.EdgeApp
-        ///
         ///&lt;section class=&quot;row-fluid&quot;&gt;
-        ///
         ///    &lt;div class=&quot;row-fluid&quot;&gt;
         ///        &lt;div class=&quot;box&quot;&gt;
         ///            &lt;div class=&quot;span3&quot;&gt;
@@ -256,7 +264,7 @@ namespace MultiPlug.Ext.Transform.Properties {
         ///            &lt;div class=&quot;span6&quot;&gt;
         ///                &lt;p style=&quot;font-size:26px; line-height: 54px; text-align: center; margin: 0px;&quot;&gt;Strings&lt;/p&gt;
         ///            &lt;/div&gt;
-        ///            &lt;div class=&quot;spa [rest of string was truncated]&quot;;.
+        ///            &lt;div class=&quot;span3&quot;  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Strings {
             get {

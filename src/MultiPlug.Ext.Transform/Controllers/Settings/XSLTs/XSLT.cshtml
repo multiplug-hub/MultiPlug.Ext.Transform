@@ -26,8 +26,7 @@
                 </div>
 
                 <div class="span3" style="text-align: right;">
-                    <a class="btn btn-black" style="height:44px; width:35px" href="@Raw(Model.Context.Paths.Home)xslts/"><i class="icon-arrow-left icon-large"></i><p>Back</p></a>
-                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn btn-green"><i class="icon-save icon-large"></i><p>Save</p></button>
+                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn"><i class="icon-save icon-large"></i><p>Save</p></button>
                 </div>
             </div>
         </div>
@@ -38,7 +37,7 @@
 
         <div class="row-fluid">
 
-            <div class="box no-border non-collapsible">
+            <div class="box non-collapsible">
 
                 <div class="row-fluid">
                     <div class="span4">
@@ -125,3 +124,10 @@
         </div>
     </section>
 </form>
+<script type="text/javascript" src="@Raw(Model.Context.Paths.Assets)js/jquery.dirty.min.js"></script>
+<script>
+    @if (String.IsNullOrEmpty(Model.Extension.Model.Subscription.Id))
+{
+    <text>$("form").dirty("setAsDirty");</text>
+}
+</script>

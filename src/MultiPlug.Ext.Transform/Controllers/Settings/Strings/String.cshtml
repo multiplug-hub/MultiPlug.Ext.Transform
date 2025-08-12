@@ -25,8 +25,7 @@
                     <p style="font-size:26px; line-height: 54px; text-align: center; margin: 0px;">String</p>
                 </div>
                 <div class="span3" style="text-align: right;">
-                    <a class="btn btn-black" style="height:44px; width:35px" href="@Raw(Model.Context.Paths.Home)strings/"><i class="icon-arrow-left icon-large"></i><p>Back</p></a>
-                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn btn-green"><i class="icon-save icon-large"></i><p>Save</p></button>
+                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn"><i class="icon-save icon-large"></i><p>Save</p></button>
                 </div>
             </div>
         </div>
@@ -90,7 +89,7 @@
                     <h3 class="box-header">
                         Sequence Steps
                     </h3>
-                    <div class="box">
+                    <div class="box non-collapsible">
                         <div class="row-fluid">
                             <div class="span12">
                                 <ul id="Steps" style="list-style: none;">
@@ -131,7 +130,7 @@
                     <h3 class="box-header">
                         Subscriptions
                     </h3>
-                    <div class="box">
+                    <div class="box non-collapsible">
                         <div class="row-fluid">
                         </div>
                         <ul id="Subscriptions" style="list-style: none;">
@@ -178,8 +177,14 @@
         </div>
     </section>
 </form>
-
+<script type="text/javascript" src="@Raw(Model.Context.Paths.Assets)js/jquery.dirty.min.js"></script>
 <script>
+
+@if (Model.Extension.Model.Steps.Length == 0)
+{
+    <text>$("form").dirty("setAsDirty");</text>
+}
+
     function newSubElement() {
         return '<li>\
             <div class="control-group">\
@@ -226,12 +231,14 @@
         var NewAggregateSubscription = $('#Subscriptions li:last-child');
         applyMPEventPickerOnClick();
         ApplyDelete(NewAggregateSubscription.find(':button'));
+        $("form").dirty("setAsDirty");
     });
 
 
     $('#NewStepActionSelected').change(function () {
         if ($(this).val() != "") {
             $('#Steps').append(newStep($(this).val()));
+            $("form").dirty("setAsClean");
             document.forms["StringForm"].submit();
         }
     });

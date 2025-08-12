@@ -59,6 +59,7 @@
     <Compile Include="Controllers\Apps\RegExTester\RegExTesterApp.cs" />
     <Compile Include="Controllers\Assets\AssetsEndpoint.cs" />
     <Compile Include="Controllers\Assets\ImageController.cs" />
+    <Compile Include="Controllers\Assets\JavaScriptsController.cs" />
     <Compile Include="Controllers\Settings\About\AboutController.cs" />
     <Compile Include="Controllers\Settings\Home\HomeController.cs" />
     <Compile Include="Controllers\Settings\RegularExpressions\RegularExpressionController.cs" />
@@ -112,6 +113,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controllers\Assets\Js\jquery.dirty.js" />
+    <Content Include="Controllers\Assets\Js\jquery.dirty.min.js" />
     <Content Include="Resources\DefaultXSLT.xslt" />
     <Content Include="Resources\transform.png" />
   </ItemGroup>

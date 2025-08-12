@@ -36,7 +36,12 @@ namespace MultiPlug.Ext.Transform.Controllers.Settings.RegularExpressions
                     Guid = guid,
                     Pattern = "",
                     Subscriptions = new Subscription[0],
-                    TransformedEvent = new Event { Guid = guid, Id = guid, Description = "Regex Result" },
+                    TransformedEvent = new Event
+                    {
+                        Guid = guid,
+                        Id = "MultiPlug.Ext.Transform-" + guid.Substring(24, 12),
+                        Description = "Regex Result"
+                    },
                     ResultKeys = new ResultKey[0],
                     ForwardEventSubjects = false,
                     IgnoreCase = true,

@@ -31,7 +31,7 @@ namespace MultiPlug.Ext.Transform.Controllers.Settings.Strings
                     TransformedEvent = new Event
                     {
                         Guid = Guid,
-                        Id = Guid,
+                        Id = "MultiPlug.Ext.Transform-" + Guid.Substring(24, 12),
                         Description = "String Transformation Result",
                         Subjects = new string[] { "StringResult"},
                         Group = "String"

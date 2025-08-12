@@ -138,7 +138,8 @@ namespace MultiPlug.Ext.Transform.Controllers.Settings.RegularExpressions
                     ResultKeys = ResultKey,
                     Subscriptions = Subscriptions.ToArray(),
                     ForwardEventSubjects = theModel.ForwardEventSubjects,
-                    IgnoreCase = theModel.IgnoreCase
+                    IgnoreCase = theModel.IgnoreCase,
+                    MatchesEqualResultKeys = theModel.MatchesEqualResultKeys
                 }
             });
 

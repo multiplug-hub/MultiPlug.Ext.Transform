@@ -14,5 +14,6 @@ namespace MultiPlug.Ext.Transform.Models.Settings.RegularExpressions
         public bool[] ResultKeyEnabled { get; set; }
         public bool ForwardEventSubjects { get; set; }
         public bool IgnoreCase { get; set; }
+        public bool MatchesEqualResultKeys { get; set; }
     }
 }

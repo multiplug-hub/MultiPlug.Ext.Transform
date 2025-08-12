@@ -30,6 +30,7 @@ namespace MultiPlug.Ext.Transform.Components.Regex
             ResultKeys = new ResultKey[0];
             ForwardEventSubjects = false;
             IgnoreCase = true;
+            MatchesEqualResultKeys = true;
         }
 
         internal void UpdateProperties(RegexProperties theNewProperties)
@@ -112,6 +113,11 @@ namespace MultiPlug.Ext.Transform.Components.Regex
                 IgnoreCase = theNewProperties.IgnoreCase;
             }
 
+            if(theNewProperties.MatchesEqualResultKeys != null)
+            {
+                MatchesEqualResultKeys = theNewProperties.MatchesEqualResultKeys;
+            }
+
             if (EvUpdated )
             {
                 EventsUpdated?.Invoke();
@@ -155,26 +161,13 @@ namespace MultiPlug.Ext.Transform.Components.Regex
 
                 var PayloadSubjects = new List<PayloadSubject>();
 
-                //for( int i = 0; i < matches.Count; i++)
-                //{
-                //    string keyvalue = null;
-
-                //    if( i < ResultKeys.Length)
-                //    {
-                //        if( ! ResultKeys[i].Enabled )
-                //        {
-                //            continue;
-                //        }
-
-                //        keyvalue = ResultKeys[i].KeyValue;
-
-                //    }
-
-                //    if(keyvalue == null) { keyvalue = "value" + i.ToString(); }
-
-                //    PayloadSubjects.Add(new PayloadSubject( keyvalue, matches[i].ToString() ) );
-                //}
-
+                if(MatchesEqualResultKeys.Value)
+                {
+                    if(matches.Count != ResultKeys.Length)
+                    {
+                        return;
+                    }
+                }
 
                 for( int i = 0; i < ResultKeys.Length; i++)
                 {

@@ -25,5 +25,7 @@ namespace MultiPlug.Ext.Transform.Models.Components.Regex
         public bool? ForwardEventSubjects { get; set; }
         [DataMember]
         public bool? IgnoreCase { get; set; }
+        [DataMember]
+        public bool? MatchesEqualResultKeys { get; set; }
     }
 }

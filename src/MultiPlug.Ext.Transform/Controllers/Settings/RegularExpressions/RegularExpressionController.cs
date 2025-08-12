@@ -39,7 +39,8 @@ namespace MultiPlug.Ext.Transform.Controllers.Settings.RegularExpressions
                     TransformedEvent = new Event { Guid = guid, Id = guid, Description = "Regex Result" },
                     ResultKeys = new ResultKey[0],
                     ForwardEventSubjects = false,
-                    IgnoreCase = true
+                    IgnoreCase = true,
+                    MatchesEqualResultKeys = true
                 };
             }
 
